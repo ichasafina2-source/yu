@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For You ♡</title>
+
+
+
+<style>
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+
+html, body {
+
+    margin: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+
+body {
+
+    background: #17070d;
+
+    color: #fff5f5;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow: hidden;
+
+}
+
+
+
+/* ================= BACKGROUND ================= */
+
+
+
+.page {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 25px;
+
+    overflow: hidden;
+
+}
+
+
+
+.page.active {
+
+    display: flex;
+
+    animation: fadeIn 1s ease;
+
+}
+
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+
+.bg {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+
+        radial-gradient(circle at 20% 20%, rgba(150,40,70,.18), transparent 30%),
+
+        radial-gradient(circle at 80% 70%, rgba(130,30,60,.15), transparent 35%),
+
+        #17070d;
+
+    z-index: -5;
+
+}
+
+
+
+/* ================= STARS ================= */
+
+
+
+.stars span {
+
+    position: fixed;
+
+    color: #ffdce5;
+
+    font-size: 13px;
+
+    animation: twinkle 2s infinite alternate;
+
+    opacity: .5;
+
+}
+
+
+
+@keyframes twinkle {
+
+    from { opacity: .15; }
+
+    to { opacity: .9; }
+
+}
+
+
+
+/* ================= BUTTON ================= */
+
+
+
+.btn {
+
+    margin-top: 28px;
+
+    padding: 12px 30px;
+
+    border: 1px solid #e7a0b4;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.03);
+
+    color: #ffdbe4;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+
+.btn:hover {
+
+    background: #e7a0b4;
+
+    color: #260a12;
+
+    transform: scale(1.05);
+
+}
+
+
+
+/* ================= PAGE 1 ================= */
+
+
+
+.intro-small {
+
+    letter-spacing: 5px;
+
+    font-size: 11px;
+
+    color: #dba4b2;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.intro-title {
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(55px, 12vw, 100px);
+
+    letter-spacing: 5px;
+
+    margin: 0;
+
+    color: #f3b0c2;
+
+    text-shadow:
+
+        0 0 10px rgba(255,140,180,.7),
+
+        0 0 40px rgba(255,80,140,.35);
+
+}
+
+
+
+.intro-sub {
+
+    margin-top: 15px;
+
+    color: #b98796;
+
+    font-size: 14px;
+
+}
+
+
+
+/* ================= ENVELOPE ================= */
+
+
+
+.envelope {
+
+    width: 180px;
+
+    height: 125px;
+
+    background: #f0b7c6;
+
+    position: relative;
+
+    margin-bottom: 15px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.4);
+
+    cursor: pointer;
+
+    transition: .4s;
+
+}
+
+
+
+.envelope:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.envelope:before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    border-left: 90px solid transparent;
+
+    border-right: 90px solid transparent;
+
+    border-top: 65px solid #d88da4;
+
+}
+
+
+
+.envelope:after {
+
+    content: "♡";
+
+    position: absolute;
+
+    font-size: 35px;
+
+    color: #7d2944;
+
+    left: 72px;
+
+    top: 62px;
+
+}
+
+
+
+/* ================= FLOWERS ================= */
+
+
+
+.flower-box {
+
+    position: relative;
+
+    width: 280px;
+
+    height: 300px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.flower {
+
+    position: absolute;
+
+    font-size: 55px;
+
+    animation: flowerFloat 3s ease-in-out infinite;
+
+}
+
+
+
+.f1 { left: 25px; top: 65px; }
+
+.f2 { left: 100px; top: 20px; animation-delay: .4s; }
+
+.f3 { right: 25px; top: 70px; animation-delay: .8s; }
+
+.f4 { left: 75px; top: 105px; animation-delay: 1.2s; }
+
+.f5 { right: 75px; top: 120px; animation-delay: 1.5s; }
+
+
+
+.stem {
+
+    position: absolute;
+
+    width: 4px;
+
+    height: 170px;
+
+    background: #628064;
+
+    bottom: 15px;
+
+    left: 138px;
+
+    transform: rotate(-2deg);
+
+}
+
+
+
+@keyframes flowerFloat {
+
+    0%,100% { transform: translateY(0) rotate(-2deg); }
+
+    50% { transform: translateY(-8px) rotate(2deg); }
+
+}
+
+
+
+.flower-title {
+
+    font-size: 27px;
+
+    color: #f4c7d2;
+
+    margin: 0;
+
+}
+
+
+
+.flower-text {
+
+    color: #bd929e;
+
+    max-width: 450px;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+}
+
+
+
+/* ================= CARD ================= */
+
+
+
+.card {
+
+    width: min(570px, 92%);
+
+    padding: 32px;
+
+    background: #fff7f0;
+
+    color: #753c4e;
+
+    border-radius: 5px;
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+
+    line-height: 1.9;
+
+    font-size: 16px;
+
+}
+
+
+
+.card-title {
+
+    font-size: 27px;
+
+    margin-bottom: 15px;
+
+    color: #8f435b;
+
+}
+
+
+
+.card p {
+
+    margin: 8px 0;
+
+}
+
+
+
+.signature {
+
+    margin-top: 22px;
+
+    color: #a95b72;
+
+    font-style: italic;
+
+}
+
+
+
+/* ================= PHOTOS ================= */
+
+
+
+.photo-area {
+
+    display: flex;
+
+    gap: 18px;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.polaroid {
+
+    background: #fffaf5;
+
+    padding: 9px 9px 30px;
+
+    width: 180px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.5);
+
+    transform: rotate(-4deg);
+
+    transition: .4s;
+
+}
+
+
+
+.polaroid:nth-child(2) {
+
+    transform: rotate(4deg);
+
+}
+
+
+
+.polaroid:hover {
+
+    transform: rotate(0) translateY(-10px);
+
+}
+
+
+
+.polaroid img {
+
+    width: 100%;
+
+    height: 190px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+
+.polaroid p {
+
+    color: #74404f;
+
+    font-size: 13px;
+
+    margin: 9px 0 0;
+
+}
+
+
+
+/* ================= CODE ================= */
+
+
+
+.code-box {
+
+    width: min(420px, 90%);
+
+}
+
+
+
+.code-title {
+
+    font-size: 25px;
+
+    color: #f0b4c4;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.code-sub {
+
+    color: #ad8490;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.code-display {
+
+    width: 100%;
+
+    height: 55px;
+
+    border: 1px solid #9c536c;
+
+    border-radius: 5px;
+
+    background: #220b13;
+
+    color: #f7c6d2;
+
+    font-size: 25px;
+
+    letter-spacing: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.keypad {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+
+}
+
+
+
+.key {
+
+    padding: 15px;
+
+    border: 1px solid #653244;
+
+    background: #230b14;
+
+    color: #e9b2c1;
+
+    cursor: pointer;
+
+    border-radius: 4px;
+
+    font-size: 16px;
+
+}
+
+
+
+.key:hover {
+
+    background: #663247;
+
+}
+
+
+
+.code-error {
+
+    height: 20px;
+
+    margin-top: 12px;
+
+    color: #e8899f;
+
+    font-size: 13px;
+
+}
+
+
+
+/* ================= LETTER ================= */
+
+
+
+.letter {
+
+    width: min(650px, 92%);
+
+    max-height: 72vh;
+
+    overflow-y: auto;
+
+    text-align: left;
+
+    background: #fff7ef;
+
+    color: #653545;
+
+    padding: 35px;
+
+    line-height: 1.9;
+
+    box-shadow: 0 20px 70px rgba(0,0,0,.5);
+
+}
+
+
+
+.letter::-webkit-scrollbar {
+
+    width: 5px;
+
+}
+
+
+
+.letter::-webkit-scrollbar-thumb {
+
+    background: #c7879a;
+
+}
+
+
+
+.letter h2 {
+
+    text-align: center;
+
+    color: #91465d;
+
+    font-weight: normal;
+
+}
+
+
+
+.letter p {
+
+    margin: 14px 0;
+
+}
+
+
+
+.letter-heart {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    color: #c95c7d;
+
+}
+
+
+
+/* ================= FINAL ================= */
+
+
+
+.final-heart {
+
+    font-size: 100px;
+
+    color: #ed9eb6;
+
+    text-shadow:
+
+        0 0 15px #ed9eb6,
+
+        0 0 50px rgba(237,158,182,.5);
+
+    animation: heartbeat 1.4s infinite;
+
+}
+
+
+
+@keyframes heartbeat {
+
+    0%,100% {
+
+        transform: scale(1);
+
+    }
+
+    15% {
+
+        transform: scale(1.15);
+
+    }
+
+    30% {
+
+        transform: scale(1);
+
+    }
+
+    45% {
+
+        transform: scale(1.1);
+
+    }
+
+}
+
+
+
+.final-title {
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(38px, 9vw, 75px);
+
+    color: #f1afc1;
+
+    margin: 15px 0;
+
+    text-shadow: 0 0 25px rgba(255,100,150,.5);
+
+}
+
+
+
+.final-text {
+
+    color: #bb8e9b;
+
+    max-width: 450px;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* ================= FLOATING HEARTS ================= */
+
+
+
+.floating {
+
+    position: fixed;
+
+    bottom: -30px;
+
+    font-size: 18px;
+
+    color: #d8819c;
+
+    pointer-events: none;
+
+    animation: rise 7s linear forwards;
+
+}
+
+
+
+@keyframes rise {
+
+    from {
+
+        transform: translateY(0) rotate(0);
+
+        opacity: 0;
+
+    }
+
+    15% {
+
+        opacity: .8;
+
+    }
+
+    to {
+
+        transform: translateY(-110vh) rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* ================= MUSIC ================= */
+
+
+
+.music {
+
+    position: fixed;
+
+    right: 18px;
+
+    top: 18px;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid #a45b70;
+
+    background: rgba(20,5,10,.7);
+
+    color: #efb1c1;
+
+    cursor: pointer;
+
+    z-index: 100;
+
+}
+
+
+
+/* ================= MOBILE ================= */
+
+
+
+@media(max-width:600px) {
+
+
+
+    .card {
+
+        padding: 23px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .flower-box {
+
+        transform: scale(.82);
+
+        margin-top: -20px;
+
+        margin-bottom: -25px;
+
+    }
+
+
+
+    .polaroid {
+
+        width: 145px;
+
+        padding-bottom: 23px;
+
+    }
+
+
+
+    .polaroid img {
+
+        height: 150px;
+
+    }
+
+
+
+    .letter {
+
+        padding: 23px;
+
+        font-size: 14px;
+
+    }
+
+
+
+    .envelope {
+
+        transform: scale(.85);
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<div class="bg"></div>
+
+
+
+<!-- BINTANG -->
+
+<div class="stars">
+
+    <span style="top:8%;left:8%">✦</span>
+
+    <span style="top:18%;left:25%">✧</span>
+
+    <span style="top:10%;right:15%">✦</span>
+
+    <span style="top:35%;left:12%">✧</span>
+
+    <span style="top:42%;right:8%">✦</span>
+
+    <span style="top:65%;left:18%">✦</span>
+
+    <span style="top:75%;right:20%">✧</span>
+
+    <span style="top:88%;left:45%">✦</span>
+
+    <span style="top:55%;left:48%">✧</span>
+
+</div>
+
+
+
+<!-- MUSIK OPSIONAL -->
+
+<audio id="music" loop>
+
+    <source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+
+
+<button class="music" onclick="toggleMusic()">♪</button>
+
+
+
+
+
+<!-- ================= PAGE 1 ================= -->
+
+
+
+<section class="page active" id="page1">
+
+
+
+    <div class="intro-small">
+
+        SOMETHING SPECIAL FOR YOU
+
+    </div>
+
+
+
+    <div class="envelope" onclick="nextPage()"></div>
+
+
+
+    <h1 class="intro-title">HELLO ♡</h1>
+
+
+
+    <div class="intro-sub">
+
+        I made something for you...
+
+    </div>
+
+
+
+    <button class="btn" onclick="nextPage()">
+
+        OPEN ♡
+
+    </button>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= PAGE 2 ================= -->
+
+
+
+<section class="page" id="page2">
+
+
+
+    <div class="flower-box">
+
+
+
+        <div class="stem"></div>
+
+
+
+        <div class="flower f1">🌸</div>
+
+        <div class="flower f2">🌷</div>
+
+        <div class="flower f3">🌸</div>
+
+        <div class="flower f4">🌺</div>
+
+        <div class="flower f5">🌷</div>
+
+
+
+    </div>
+
+
+
+    <h2 class="flower-title">
+
+        A little wish for you ♡
+    </h2>
+
+
+
+    <p class="flower-text">
+
+        I hope life gives you plenty of reasons to smile,
+        little things to look forward to, and beautiful
+        moments you never want to forget. May your days bloom like these flowers. 🌷
+    </p>
+
+
+
+    <button class="btn" onclick="nextPage()">
+
+        NEXT ♡
+
+    </button>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= PAGE 3 ================= -->
+
+
+
+<section class="page" id="page3">
+
+
+
+    <div class="card">
+
+
+
+        <div class="card-title">
+
+            Happy Birthday ♡
+
+        </div>
+
+
+
+        <p>
+
+            Today is all about you, so I hope you enjoy
+            every little moment of it.
+        </p>
+
+
+
+        <p>
+
+            I hope this new age brings you happiness,
+            good health, new adventures, and lots of
+            unexpected good things.
+            
+        </p>
+
+
+
+        <p>
+
+            Keep being yourself, and don’t forget to
+            enjoy life along the way.
+        </p>
+
+
+
+        <div class="signature">
+
+            with a little love,
+
+            <br>
+
+            someone who wishes you the best ♡
+        </div>
+
+
+
+    </div>
+
+
+
+    <button class="btn" onclick="nextPage()">
+
+        NEXT
+
+    </button>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= PAGE 4 ================= -->
+
+
+
+<section class="page" id="page4">
+
+
+
+    <div class="photo-area">
+
+
+
+        <div class="polaroid">
+
+            <img src="foto1.jpg" alt="Foto pertama">
+
+            <p>caught in 4K ♡</p>
+
+        </div>
+
+
+
+        <div class="polaroid">
+
+            <img src="foto2.jpg" alt="Foto kedua">
+
+            <p>certified funny boy♡</p>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <p style="color:#bd929e;margin-top:25px;">
+
+        Some memories are too funny to forget.
+    </p>
+
+
+
+    <button class="btn" onclick="nextPage()">
+
+        ONE MORE ♡
+
+    </button>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= PAGE 5 ================= -->
+
+
+
+<section class="page" id="page5">
+
+
+
+    <div class="code-box">
+
+
+
+        <div class="code-title">
+
+            A LITTLE SECRET ♡
+
+        </div>
+
+
+
+        <div class="code-sub">
+
+            Enter the special code to continue
+
+        </div>
+
+
+
+        <div class="code-display" id="codeDisplay">
+
+            • • • •
+
+        </div>
+
+
+
+        <div class="keypad">
+
+
+
+            <button class="key" onclick="pressKey('1')">1</button>
+
+            <button class="key" onclick="pressKey('2')">2</button>
+
+            <button class="key" onclick="pressKey('3')">3</button>
+
+
+
+            <button class="key" onclick="pressKey('4')">4</button>
+
+            <button class="key" onclick="pressKey('5')">5</button>
+
+            <button class="key" onclick="pressKey('6')">6</button>
+
+
+
+            <button class="key" onclick="pressKey('7')">7</button>
+
+            <button class="key" onclick="pressKey('8')">8</button>
+
+            <button class="key" onclick="pressKey('9')">9</button>
+
+
+
+            <button class="key" onclick="clearCode()">⌫</button>
+
+            <button class="key" onclick="pressKey('0')">0</button>
+
+            <button class="key" onclick="checkCode()">♡</button>
+
+
+
+        </div>
+
+
+
+        <div class="code-error" id="codeError"></div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= PAGE 6 ================= -->
+
+
+
+<section class="page" id="page6">
+
+
+
+    <div class="letter">
+
+
+
+        <h2>
+
+            A Letter For You ♡
+
+        </h2>
+
+
+
+        <p>
+
+            Dear Yu,
+        </p>
+
+
+
+        <p>
+
+            Happy birthday! ♡ I hope your new age brings
+            you lots of happiness, good health, peaceful
+            days, and beautiful memories.
+        </p>
+
+
+
+        <p>
+
+            Even though we may be far apart, I’m glad our
+            paths crossed. Thank you for being part of my
+            days and for all the little moments we’ve shared.
+            
+        </p>
+
+
+
+        <p>
+
+            I hope you get to do more of the things you love,
+            meet good people, and experience things that
+            make you genuinely happy.
+            
+            
+        </p>
+
+
+
+        <p>
+
+            Life won’t always go the way we want, but I hope
+            you always find a reason to keep going and
+            something to smile about, even on difficult days.
+        </p>
+
+
+
+        <p>
+
+            I don’t know what the future holds, but I’m happy
+            that I got to know you. I wish you all the good things you deserve.
+            And whenever life gets difficult,
+
+            
+            
+        </p>
+
+
+
+        <p>
+
+            Take care of yourself, eat well, and get enough rest.
+            Happy birthday once again! I hope this year treats
+            you kindly and gives you plenty of reasons to smile. Stay happy, stay healthy, and stay you. ♡
+        </p>
+
+
+
+        <div class="letter-heart">
+
+            ♡
+
+        </div>
+
+
+
+        <div style="text-align:center;">
+
+            <button class="btn" onclick="nextPage()">
+
+                CONTINUE
+
+            </button>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+<!-- ================= PAGE 7 ================= -->
+
+
+
+<section class="page" id="page7">
+
+
+
+    <div class="final-heart">
+
+        ♥
+
+    </div>
+
+
+
+    <h1 class="final-title">
+
+        HAPPY BIRTHDAY!
+
+    </h1>
+
+
+
+    <p class="final-text">
+
+        I hope your life is filled with laughter, good surprises,
+        and people who make your days better.
+        
+    </p>
+
+
+
+    <p style="color:#d895a7;">
+
+        Enjoy your special day, birthday boy! ♡
+    </p>
+
+
+
+    <button class="btn" onclick="restart()">
+
+        REPLAY ♡
+
+    </button>
+
+
+
+</section>
+
+
+
+
+
+<script>
+
+
+
+/* ================= PAGE SYSTEM ================= */
+
+
+
+let currentPage = 1;
+
+
+
+function nextPage() {
+
+
+
+    const current = document.getElementById("page" + currentPage);
+
+
+
+    current.classList.remove("active");
+
+
+
+    currentPage++;
+
+
+
+    if (currentPage > 7) {
+
+        currentPage = 1;
+
+    }
+
+
+
+    const next = document.getElementById("page" + currentPage);
+
+
+
+    next.classList.add("active");
+
+
+
+    createHearts();
+
+
+
+    window.scrollTo(0, 0);
+
+}
+
+
+
+
+
+/* ================= REPLAY ================= */
+
+
+
+function restart() {
+
+
+
+    document.getElementById("page" + currentPage)
+
+        .classList.remove("active");
+
+
+
+    currentPage = 1;
+
+
+
+    document.getElementById("page1")
+
+        .classList.add("active");
+
+
+
+}
+
+
+
+
+
+/* ================= PASSWORD ================= */
+
+
+
+/*
+
+   PASSWORD SAAT INI:
+
+   1509
+
+
+
+   Kalau mau mengganti,
+
+   ubah angka di bagian:
+
+   if (code === "1509")
+
+*/
+
+
+
+let code = "";
+
+
+
+function pressKey(number) {
+
+
+
+    if (code.length >= 4) {
+
+        return;
+
+    }
+
+
+
+    code += number;
+
+
+
+    updateCode();
+
+}
+
+
+
+function updateCode() {
+
+
+
+    let display = "";
+
+
+
+    for (let i = 0; i < 4; i++) {
+
+
+
+        if (i < code.length) {
+
+            display += "● ";
+
+        } else {
+
+            display += "• ";
+
+        }
+
+
+
+    }
+
+
+
+    document.getElementById("codeDisplay")
+
+        .innerText = display;
+
+}
+
+
+
+function clearCode() {
+
+
+
+    code = "";
+
+
+
+    updateCode();
+
+
+
+    document.getElementById("codeError")
+
+        .innerText = "";
+
+}
+
+
+
+function checkCode() {
+
+
+
+    if (code === "1509") {
+
+
+
+        document.getElementById("codeError")
+
+            .innerText = "Correct ♡";
+
+
+
+        setTimeout(function() {
+
+
+
+            document.getElementById("page5")
+
+                .classList.remove("active");
+
+
+
+            currentPage = 6;
+
+
+
+            document.getElementById("page6")
+
+                .classList.add("active");
+
+
+
+            code = "";
+
+
+
+            updateCode();
+
+
+
+        }, 700);
+
+
+
+    } else {
+
+
+
+        document.getElementById("codeError")
+
+            .innerText = "Hmm... that's not the secret code ♡";
+
+
+
+        code = "";
+
+
+
+        updateCode();
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ================= FLOATING HEARTS ================= */
+
+
+
+function createHearts() {
+
+
+
+    for (let i = 0; i < 5; i++) {
+
+
+
+        const heart = document.createElement("div");
+
+
+
+        heart.className = "floating";
+
+
+
+        heart.innerText =
+
+            Math.random() > .5 ? "♡" : "♥";
+
+
+
+        heart.style.left =
+
+            Math.random() * 100 + "vw";
+
+
+
+        heart.style.animationDuration =
+
+            (5 + Math.random() * 4) + "s";
+
+
+
+        document.body.appendChild(heart);
+
+
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, 9000);
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ================= MUSIC ================= */
+
+
+
+const music = document.getElementById("music");
+
+
+
+function toggleMusic() {
+
+
+
+    if (music.paused) {
+
+
+
+        music.play().catch(function() {});
+
+
+
+    } else {
+
+
+
+        music.pause();
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+/* ================= AUTO FLOATING HEARTS ================= */
+
+
+
+setInterval(function() {
+
+
+
+    if (Math.random() > .45) {
+
+        createHearts();
+
+    }
+
+
+
+}, 3500);
+
+
+
+
+
+/* ================= START MUSIC AFTER CLICK ================= */
+
+
+
+document.addEventListener("click", function() {
+
+
+
+    if (music.paused) {
+
+
+
+        music.play().catch(function() {});
+
+
+
+    }
+
+
+
+}, { once: true });
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
